@@ -4,23 +4,32 @@ import ReactDOM from 'react-dom';
 import Axios from 'axios';
 
 import Header from './Header.jsx';
+import Activity from './Activity.jsx';
 
 const App = () => {
-  // const [calls, setCalls] = useState({});
+  const [calls, setCalls] = useState({
+    callHistory: []
+  });
 
   useEffect(() => {
     Promise.all([
-      Axios.get("https://cerulean-marlin-wig.cyclic.app/activities") //because of the proxy in package.json, no need to include http://localhost:8001
+      Axios.get("https://cerulean-marlin-wig.cyclic.app/activities")
     ]).then((all) => {
-      console.log(all[0].data);
+      console.log(all[0].data)
+      setCalls(prev => ({prev,
+        callHistory: all[0].data
+      }));
     });
   }, []);
 
   return (
-    <div className='container'>
+    <main className='container'>
       <Header/>
-      <div className="container-view">Some activities should be here</div>
-    </div>
+      <section className="container-view">
+        <div>Activity</div>
+        <Activity callHistory={calls.callHistory}/>
+      </section>
+    </main>
   );
 };
 
