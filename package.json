@@ -11,8 +11,8 @@
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "start": "export SET NODE_OPTIONS=--openssl-legacy-provider && webpack-dev-server --mode development --open",
-    "build": "export SET NODE_OPTIONS=--openssl-legacy-provider && webpack --mode production"
+    "start": "webpack-dev-server --mode development --open",
+    "build": "webpack --mode production"
   },
   "dependencies": {
     "axios": "^1.4.0",
