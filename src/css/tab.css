@@ -19,4 +19,6 @@
 
 .tab-content {
   padding: 0px 30px;
+  height: 520px;
+  overflow: scroll;
 }
