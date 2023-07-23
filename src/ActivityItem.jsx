@@ -46,7 +46,7 @@ const ActivityItem = (props) => {
     <div className="call-info">
       <div className="direction">{callDirection(direction)}</div>
       <div className="detail">
-        <div>{caller ? caller : "Unknown Caller"}</div>
+        <div className="caller">{caller ? caller : "Unknown Caller"}</div>
         <div className="date-and-type">
           <div>{shortTimeStamp(time)}</div>
           <div>{callType}</div>

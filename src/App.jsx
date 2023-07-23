@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import Axios from 'axios';
 
 import Header from './Header.jsx';
-import Activity from './Activity.jsx';
 import Tab from './Tab.jsx';
 
 const App = () => {
