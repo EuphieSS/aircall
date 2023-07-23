@@ -1,10 +1,10 @@
-import React from 'react';
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import Axios from 'axios';
 
 import Header from './Header.jsx';
 import Activity from './Activity.jsx';
+import Tab from './Tab.jsx';
 
 const App = () => {
   const [calls, setCalls] = useState({
@@ -24,10 +24,9 @@ const App = () => {
 
   return (
     <main className='container'>
-      <Header/>
+      <Header />
       <section className="container-view">
-        <div>Activity</div>
-        <Activity callHistory={calls.callHistory}/>
+        <Tab callHistory={calls.callHistory} />
       </section>
     </main>
   );
