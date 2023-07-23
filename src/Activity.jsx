@@ -5,14 +5,15 @@ import ActivityItem from "./ActivityItem.jsx";
 const Activity = (props) => {
   const { callHistory } = props;
 
-  const calls = callHistory;
-  const callArray = calls.map(item => {
+  const callArray = callHistory.map(item => {
     return (
       <ActivityItem
         key={item.id}
         caller={item.from}
         callType={item.call_type}
         direction={item.direction}
+        time={item.created_at}
+        archived={item.is_archived}
       />
     );
   });

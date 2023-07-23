@@ -16,3 +16,7 @@
   border-bottom: solid 2px tomato;
   color: black;
 }
+
+.tab-content {
+  padding: 0px 30px;
+}
