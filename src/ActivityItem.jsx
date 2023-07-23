@@ -1,8 +1,9 @@
 import React from "react";
 import FeatherIcon from "feather-icons-react";
+import Axios from "axios";
 
 const ActivityItem = (props) => {
-  const { caller, callType, direction, time, archived } = props;
+  const { id, caller, callType, direction, time, archived } = props;
 
   const shortTimeStamp = (time) => {
     const shortened = time.slice(0, 10);
@@ -19,6 +20,20 @@ const ActivityItem = (props) => {
     }
   }
 
+  const toggleArchive = (id, archived) => {
+    if (archived) {
+      console.log("To Unarchive")
+      return Axios
+        .patch(`https://cerulean-marlin-wig.cyclic.app/activities/${id}`, {is_archived: false})
+        .then(res => console.log(res))
+    } else {
+      console.log("To Archive")
+      return Axios
+      .patch(`https://cerulean-marlin-wig.cyclic.app/activities/${id}`, {is_archived: true})
+      .then(res => console.log(res))
+    }
+  }
+
   return (
     <div className="call-info">
       <div className="direction">{callDirection(direction)}</div>
@@ -29,7 +44,12 @@ const ActivityItem = (props) => {
           <div>{callType}</div>
         </div>
       </div>
-      <div className="archive">{archived ? <FeatherIcon icon="folder-minus" size="20" /> : <FeatherIcon icon="folder-plus" size="20" />}</div>
+      <div
+        className="archive"
+        onClick={() => toggleArchive(id, archived)}
+      >
+        {archived ? <FeatherIcon icon="folder-minus" size="20" /> : <FeatherIcon icon="folder-plus" size="20" />}
+      </div>
     </div>
   );
 }

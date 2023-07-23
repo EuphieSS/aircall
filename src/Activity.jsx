@@ -9,6 +9,7 @@ const Activity = (props) => {
     return (
       <ActivityItem
         key={item.id}
+        id={item.id}
         caller={item.from}
         callType={item.call_type}
         direction={item.direction}
