@@ -8,8 +8,8 @@
   "license": "",
   "private": false,
   "scripts": {
-    "start": "export SET NODE_OPTIONS=--openssl-legacy-provider && react-scripts start",
-    "build": "export SET NODE_OPTIONS=--openssl-legacy-provider && react-scripts build"
+    "start": "export SET NODE_OPTIONS=--openssl-legacy-provider && webpack-dev-server --mode development --open",
+    "build": "export SET NODE_OPTIONS=--openssl-legacy-provider && webpack --mode production"
   },
   "dependencies": {
     "axios": "^1.4.0",
