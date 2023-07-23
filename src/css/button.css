@@ -1,0 +1,15 @@
+button {
+  margin-left: 20px;
+  padding: 7px 14px;
+  border: rgb(172, 172, 172) solid 1px;
+  border-radius: 5px;
+  cursor: pointer;
+  color: rgb(72, 72, 72);
+  font-weight: bold;
+}
+
+button div {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}

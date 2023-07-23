@@ -4,6 +4,7 @@ import './css/header.css';
 import './css/tab.css';
 import './css/activity.css';
 import './css/activityItem.css';
+import './css/button.css';
 
 import App from './App.jsx';
 
