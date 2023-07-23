@@ -1,5 +1,4 @@
 {
-  "homepage": "http://EuphieSS.github.io/aircall",
   "name": "frontend-hiring-challenge",
   "version": "1.0.0",
   "description": "Leap test",
@@ -10,8 +9,6 @@
   "private": false,
   "scripts": {
     "start": "webpack-dev-server --mode development --open",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "build": "webpack --mode production"
   },
   "dependencies": {
