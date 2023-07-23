@@ -29,7 +29,7 @@ const Tab = (props) => {
       </div>
 
       <div className="tab-content">
-        <Activity callHistory={callHistory} />
+        <Activity callHistory={callHistory} tab={tab}/>
       </div>
     </div>
   );
