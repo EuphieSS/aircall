@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import FeatherIcon from "feather-icons-react";
 import Axios from "axios";
 
 const ActivityItem = (props) => {
   const { id, caller, callType, direction, time, archived } = props;
+
+  // const [archive, setArchive] = useState(archived);
 
   const shortTimeStamp = (time) => {
     const shortened = time.slice(0, 10);
@@ -25,12 +27,18 @@ const ActivityItem = (props) => {
       console.log("To Unarchive")
       return Axios
         .patch(`https://cerulean-marlin-wig.cyclic.app/activities/${id}`, {is_archived: false})
-        .then(res => console.log(res))
+        .then(res => {
+          console.log(res);
+          // setArchive(...archive, false)
+        })
     } else {
       console.log("To Archive")
       return Axios
       .patch(`https://cerulean-marlin-wig.cyclic.app/activities/${id}`, {is_archived: true})
-      .then(res => console.log(res))
+      .then(res => {
+        console.log(res);
+        // setArchive(...archive, true)
+      })
     }
   }
 
