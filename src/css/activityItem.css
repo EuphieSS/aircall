@@ -16,9 +16,14 @@
 
 .archive {
   grid-column: 8;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  cursor: pointer;
 }
 
 .date-and-type {
   display: flex;
   padding-top: 2px;
+  gap: 30px;
 }

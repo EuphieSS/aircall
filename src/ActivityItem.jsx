@@ -29,7 +29,7 @@ const ActivityItem = (props) => {
           <div>{callType}</div>
         </div>
       </div>
-      <div className="archive">Arch</div>
+      <div className="archive">{archived ? <FeatherIcon icon="folder-minus" size="20" /> : <FeatherIcon icon="folder-plus" size="20" />}</div>
     </div>
   );
 }
