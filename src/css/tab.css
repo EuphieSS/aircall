@@ -19,7 +19,7 @@
 
 .tab-content {
   padding: 0px 30px;
-  padding-top: 10px;
-  height: 470px;
-  overflow: scroll;
+  margin-top: 11px;
+  height: 471px;
+  overflow: auto;
 }
