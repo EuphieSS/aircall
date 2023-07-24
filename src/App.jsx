@@ -49,11 +49,33 @@ const App = () => {
     }
   }
 
+  const unarchiveAll = () => {
+    const callHistory = [...calls.callHistory];
+
+    for (let i = 0; i < callHistory.length; i++) {
+      if (callHistory[i].is_archived) {
+        callHistory[i].is_archived = false;
+      }
+    }    
+
+    console.log("Unarchive All")
+    return Axios
+      .patch(`https://cerulean-marlin-wig.cyclic.app/reset`)
+      .then(res => {
+        console.log(res);
+        setCalls({calls, callHistory});
+      })
+  }
+
   return (
     <main className='container'>
       <Header />
       <section className="container-view">
-        <Tab callHistory={calls.callHistory} toggleArchive={toggleArchive}/>
+        <Tab 
+          callHistory={calls.callHistory}
+          toggleArchive={toggleArchive}
+          unarchiveAll={unarchiveAll}
+        />
       </section>
     </main>
   );
