@@ -3,7 +3,7 @@ import React from "react";
 import ActivityItem from "./ActivityItem.jsx";
 
 const Activity = (props) => {
-  const { callHistory, tab } = props;
+  const { callHistory, tab, toggleArchive } = props;
 
   const callFilter = callHistory.filter(calls => {
     return tab === "archive" ? calls.is_archived : !calls.is_archived;
@@ -20,6 +20,7 @@ const Activity = (props) => {
         time={item.created_at}
         archived={item.is_archived}
         tab={tab}
+        toggleArchive={toggleArchive}
       />
     );
   });
