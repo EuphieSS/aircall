@@ -49,6 +49,29 @@ const App = () => {
     }
   }
 
+  const archiveAll = () => {
+    const callHistory = [...calls.callHistory];
+    let ids = [];
+
+    for (let i = 0; i < callHistory.length; i++) {
+      if (!callHistory[i].is_archived) {
+        ids.push(callHistory[i].id);
+        callHistory[i].is_archived = true;
+      }
+    }
+
+    console.log("Archive All")
+    return Promise.all(
+      ids.map(id => Axios.patch(`https://cerulean-marlin-wig.cyclic.app/activities/${id}`, {is_archived: true}))
+    )
+      .catch(error => console.log(error))
+      .then((all) => {
+      console.log("here")
+      setCalls({calls, callHistory});
+      })
+      
+  }
+
   const unarchiveAll = () => {
     const callHistory = [...calls.callHistory];
 
@@ -74,6 +97,7 @@ const App = () => {
         <Tab 
           callHistory={calls.callHistory}
           toggleArchive={toggleArchive}
+          archiveAll={archiveAll}
           unarchiveAll={unarchiveAll}
         />
       </section>

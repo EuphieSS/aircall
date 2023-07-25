@@ -4,7 +4,7 @@ import Activity from "./Activity.jsx";
 import Button from "./Button.jsx";
 
 const Tab = (props) => {
-  const { callHistory, toggleArchive, unarchiveAll } = props;
+  const { callHistory, toggleArchive, archiveAll, unarchiveAll } = props;
 
   const [tab, setTab] = useState("activity");
 
@@ -29,7 +29,7 @@ const Tab = (props) => {
         </div>
       </div>
 
-      <Button tab={tab} unarchiveAll={unarchiveAll} />
+      <Button tab={tab} archiveAll={archiveAll} unarchiveAll={unarchiveAll} />
 
       <div className="tab-content">
         <Activity
