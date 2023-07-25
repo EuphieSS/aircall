@@ -1,25 +1,36 @@
 .tab-options {
   display: flex;
   gap: 25px;
-  padding: 10px 20px;
+  padding: 5px 20px;
   font-weight: bold;
 }
 
 .tabs {
   padding: 10px;
   cursor: pointer;
-  color: rgb(43, 43, 43);
+  color: rgb(66, 66, 66);
+  width: 55px;
+  text-align: center;
+}
+
+.tabs:hover {
+  font-size: 15px;
+  border-bottom: solid 2px rgb(255, 160, 144);
 }
 
 .active-tab {
+  padding: 10px;
+  cursor: pointer;
   font-size: 15px;
   border-bottom: solid 2px tomato;
   color: black;
+  width: 55px;
+  text-align: center;
 }
 
 .tab-content {
   padding: 0px 30px;
-  margin-top: 11px;
-  height: 471px;
+  margin-top: 5px;
+  height: 470px;
   overflow: auto;
 }

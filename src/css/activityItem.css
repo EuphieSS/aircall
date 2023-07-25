@@ -1,6 +1,6 @@
 .call-info {
   display: grid;
-  grid-template-columns: repeat(8, 1fr);
+  grid-template-columns: repeat(11, 1fr);
   padding: 8px 0px;
 }
 
@@ -11,23 +11,30 @@
 }
 
 .detail {
-  grid-column: 3 / 8;
+  grid-column: 3 / 11;
 }
 
 .archive {
-  grid-column: 8;
+  grid-column: 11;
   display: flex;
   align-items: center;
-  justify-content: end;
+  justify-content: center;
   cursor: pointer;
+  color: gray;
+}
+
+.archive:hover {
+  color: black;
+  border-bottom: solid 2px tomato;
 }
 
 .caller {
   font-weight: bold;
+  font-size: 13.5px;
 }
 
 .date-and-type {
   display: flex;
-  padding-top: 2px;
+  padding-top: 4px;
   gap: 30px;
 }

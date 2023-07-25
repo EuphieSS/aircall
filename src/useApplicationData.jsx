@@ -9,6 +9,7 @@ const useApplicationData = () => {
   useEffect(() => {
     Axios.get("https://cerulean-marlin-wig.cyclic.app/activities")
       .then((res) => {
+        console.log(res.data)
         setCalls(prev => ({prev,
           callHistory: res.data
         }));

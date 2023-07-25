@@ -16,13 +16,13 @@ const Tab = (props) => {
     <div>
       <div className="tab-options">
         <div
-          className={tab === "activity" ? "tabs active-tab" : "tabs"}
+          className={tab === "activity" ? "active-tab" : "tabs"}
           onClick={() => toggleTab("activity")}
         >
           Activity
         </div>
         <div
-          className={tab === "archive" ? "tabs active-tab" : "tabs"}
+          className={tab === "archive" ? "active-tab" : "tabs"}
           onClick={() => toggleTab("archive")}
         >
           Archive

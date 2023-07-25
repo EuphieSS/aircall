@@ -5,17 +5,17 @@ const ActivityItem = (props) => {
   const { id, caller, callType, direction, time, archived, toggleArchive } = props;
 
   const shortTimeStamp = (time) => {
-    const shortened = time.slice(0, 10);
+    const shortened = time.slice(0, 10) + " " + time.slice(11, 16);
     return shortened;
   }
 
   const callDirection = (call) => {
     if (call === "inbound") {
-      return <FeatherIcon icon="phone-incoming" size="18" />
+      return <FeatherIcon icon="phone-incoming" size="18" color="forestgreen"/>
     } else if (call === "outbound") {
-      return <FeatherIcon icon="phone-outgoing" size="18" />
+      return <FeatherIcon icon="phone-outgoing" size="18" color="dodgerblue"/>
     } else {
-      return <FeatherIcon icon="phone" size="18" />
+      return <FeatherIcon icon="phone" size="18" color="gray"/>
     }
   }
 
